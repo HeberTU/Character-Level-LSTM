@@ -2,6 +2,9 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
+def train_modality():
+    return torch.cuda.is_available()
+
 class CharLSTM(nn.Module):
 
     def __init__(self, chars, int2char, char2int, train_on_gpu, n_hidden = 256, n_layers = 2, drop_prob = 0.25, lr = 0.001):
@@ -49,5 +52,5 @@ class CharLSTM(nn.Module):
                 weight.new(self.n_layers, batch_size, self.n_hidden).zero_(),
                 weight.new(self.n_layers, batch_size, self.n_hidden).zero_()
             )
-            
+
         return hidden
