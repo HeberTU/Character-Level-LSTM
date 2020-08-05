@@ -38,7 +38,7 @@ class CharLSTM(nn.Module):
 
         return out, hidden
 
-    def init_hidden_state(self, batch_size):
+    def init_hidden_state(self, batch_size,train_on_gpu):
 
         weight = next(self.parameters()).data
 
