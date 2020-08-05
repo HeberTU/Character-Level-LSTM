@@ -12,3 +12,5 @@ model = CharLSTM(
     chars = chars, int2char = int2char, char2int = char2int,train_on_gpu = train_modality(),
      n_hidden = 256, n_layers = 2, drop_prob = 0.25, lr = 0.001
 )
+
+print(model)

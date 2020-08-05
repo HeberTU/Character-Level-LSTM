@@ -1,11 +1,12 @@
+import numpy as np
 
 def get_vocabulary(text):
-        '''Creates the vocabulary needed to represent a corpus as numerc values
+    '''Creates the vocabulary needed to represent a corpus as numerc values
             Arguments
             ---------
             text: Corpus you want represent as numerc values
 
-        '''
+    '''
     chars = tuple(set(text))
     int2char = dict(enumerate(chars))
     char2int = {ch: ii for ii, ch in int2char.items()}
