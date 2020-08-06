@@ -28,9 +28,10 @@ def train(model, data, train_on_gpu=False, epochs = 10, batch_size = 10, seq_len
 
     # Create Training and Validation data
     val_idx = int(len(data) * (1-val_frac))
-    data = data[:val_idx]
-    val_data = data[val_idx:]
 
+    val_data = data[val_idx:]
+    data = data[:val_idx]
+    
     if (train_on_gpu):
         model.cuda()
 
